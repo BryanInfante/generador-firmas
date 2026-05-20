@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Firmas Corporativas Littus Group</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__bar">
+        <p class="eyebrow">Littus Group</p>
+        <h1>Generador de firmas corporativas</h1>
+      </div>
+      <p class="hero__description">
+        Completa los datos y copia la firma generada para pegarla en Outlook.
+        Los campos de teléfonos, correos, sitios web y ubicaciones aceptan varios valores: escribe uno por línea.
+      </p>
+    </header>
+
+    <section class="layout">
+      <form class="panel form-panel" id="signatureForm">
+        <div class="panel__header">
+          <h2>Datos de la firma</h2>
+          <p>Usa solo los campos que correspondan. Los campos vacíos no aparecerán en la firma.</p>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label for="name">Nombre completo</label>
+            <input id="name" type="text" value="" placeholder="Ing. John Doe" />
+          </div>
+
+          <div>
+            <label for="role">Cargo</label>
+            <input id="role" type="text" value="" placeholder="Coordinador de Procesos" />
+          </div>
+
+          <div>
+            <label for="phones">Teléfonos</label>
+            <textarea id="phones" placeholder="+593 99 123 4567"></textarea>
+            <span class="hint">Un teléfono por línea.</span>
+          </div>
+
+          <div>
+            <label for="emails">Correos</label>
+            <textarea id="emails" placeholder="johndoe@littusgroup.com"></textarea>
+            <span class="hint">Un correo por línea.</span>
+          </div>
+
+          <div>
+            <label for="websites">Sitios web</label>
+            <textarea id="websites" placeholder="www.littusgroup.com"></textarea>
+            <span class="hint">Un sitio web por línea.</span>
+          </div>
+
+          <div>
+            <label for="locations">Ubicaciones</label>
+            <textarea id="locations" placeholder="Quito, Ecuador"></textarea>
+            <span class="hint">Opcional. Una ubicación por línea. Déjalo vacío si no aplica.</span>
+          </div>
+
+          <div>
+            <label for="imageUrl">URL de imagen corporativa</label>
+            <input id="imageUrl" type="url" value="https://i.imgur.com/JIupJ8C.png" />
+            <span class="hint">Normalmente no se cambia. Debe ser enlace directo a imagen: .png, .jpg, .jpeg o .webp.</span>
+          </div>
+
+          <div class="checkbox-row">
+            <input id="privacyNotice" type="checkbox" checked />
+            <label for="privacyNotice">Incluir aviso de confidencialidad y privacidad</label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-secondary" type="button" id="resetBtn">Cargar ejemplo</button>
+          <button class="btn btn-ghost" type="reset">Limpiar campos</button>
+        </div>
+
+        <div class="note">
+          Outlook no ejecuta JavaScript dentro de una firma. Esta página solo genera el HTML final.
+          Lo que se copia y pega en Outlook es una firma estática compatible.
+        </div>
+      </form>
+
+      <section class="panel preview-panel">
+        <div class="panel__header">
+          <h2>Vista previa</h2>
+          <p>Cuando la firma se vea correcta, usa el botón para copiarla y pegarla en Outlook.</p>
+        </div>
+
+        <div class="preview-box" id="preview"></div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="button" id="copySignatureBtn">Copiar firma para Outlook</button>
+          <button class="btn btn-secondary" type="button" id="copyHtmlBtn">Copiar HTML</button>
+          <button class="btn btn-secondary" type="button" id="downloadBtn">Descargar HTML</button>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <details class="html-details">
+          <summary>Ver HTML generado</summary>
+          <textarea class="html-output" id="htmlOutput" readonly></textarea>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
