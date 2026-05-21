@@ -50,7 +50,7 @@ function phoneHref(value) {
 
 function createIconLine(iconUrl, alt, contentHtml) {
   return `
-            <div style="color: #475569; font-size: 12px;">
+            <div style="color: #475569; font-size: 12px; line-height: 1;">
               <img src="${iconUrl}" width="12" height="12" alt="${alt}" style="display: inline-block; vertical-align: -2px; border: 0; margin-right: 6px;"> ${contentHtml}
             </div>`;
 }
@@ -59,7 +59,7 @@ function buildSignatureHtml(data) {
   const name = escapeHtml(data.name);
   const imageUrl = escapeHtml(data.imageUrl);
 
-  const rolesHtml = data.role.map(r => `<div style="color: #5f8fd8; font-size: 13px;">${escapeHtml(r)}</div>`).join("");
+  const rolesHtml = data.role.map(r => `<div style="color: #5f8fd8; font-size: 13px; line-height: 1;">${escapeHtml(r)}</div>`).join("");
 
   const phoneLines = data.phones.map(phone => {
     const safePhone = escapeHtml(phone);
