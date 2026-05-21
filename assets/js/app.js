@@ -125,7 +125,7 @@ function buildSignatureHtml(data) {
              <div style="font-weight: bold; font-size: 16px; color: #2f63c7; margin-bottom: 3px;">
                ${name}
              </div>
-             ${rolesHtml ? `<div style="margin-bottom: 2px;">${rolesHtml}</div>` : ""}${phoneLines ? `<div style="margin-bottom: 2px;">${phoneLines}</div>` : ""}${emailLines ? `<div style="margin-bottom: 2px;">${emailLines}</div>` : ""}${websiteLines ? `<div style="margin-bottom: 2px;">${websiteLines}</div>` : ""}${locationLines ? `<div style="margin-bottom: 2px;">${locationLines}</div>` : ""}
+             ${rolesHtml ? `<div style="margin-bottom: 4px;">${rolesHtml}</div>` : ""}${phoneLines ? `<div style="margin-bottom: 4px;">${phoneLines}</div>` : ""}${emailLines ? `<div style="margin-bottom: 4px;">${emailLines}</div>` : ""}${websiteLines ? `<div style="margin-bottom: 4px;">${websiteLines}</div>` : ""}${locationLines ? `<div style="margin-bottom: 4px;">${locationLines}</div>` : ""}
            </td>
         </tr>
       </table>
