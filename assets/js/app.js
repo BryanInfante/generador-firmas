@@ -50,7 +50,7 @@ function phoneHref(value) {
 
 function createIconLine(iconUrl, alt, contentHtml) {
   return `
-            <div style="color: #475569; font-size: 12px; margin-bottom: 2px;">
+            <div style="color: #475569; font-size: 12px;">
               <img src="${iconUrl}" width="12" height="12" alt="${alt}" style="display: inline-block; vertical-align: -2px; border: 0; margin-right: 6px;"> ${contentHtml}
             </div>`;
 }
@@ -114,19 +114,19 @@ function buildSignatureHtml(data) {
     <td style="padding: 0;">
       <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #475569; max-width: 600px;">
         <tr>
-          <td style="padding-right: 15px; vertical-align: top; width: 150px; text-align: center;">
+           <td style="padding-right: 15px; vertical-align: middle; width: 150px; text-align: center;">
             <img src="${imageUrl}"
                  width="125"
                  height="125"
                  style="display: block; margin: 0 auto; border: 0;"
                  alt="Littus Group">
           </td>
-          <td style="vertical-align: top; border-left: 3px solid #111111; padding-left: 15px;">
+           <td style="vertical-align: middle; border-left: 3px solid #111111; padding-left: 15px;">
              <div style="font-weight: bold; font-size: 16px; color: #2f63c7; margin-bottom: 3px;">
                ${name}
              </div>
-             ${rolesHtml ? `<div style="margin-bottom: 8px;">${rolesHtml}</div>` : ""}${phoneLines}${emailLines}${websiteLines}${locationLines}
-          </td>
+             ${rolesHtml ? `<div style="margin-bottom: 8px;">${rolesHtml}</div>` : ""}${phoneLines ? `<div style="margin-bottom: 8px;">${phoneLines}</div>` : ""}${emailLines ? `<div style="margin-bottom: 8px;">${emailLines}</div>` : ""}${websiteLines ? `<div style="margin-bottom: 8px;">${websiteLines}</div>` : ""}${locationLines ? `<div style="margin-bottom: 8px;">${locationLines}</div>` : ""}
+           </td>
         </tr>
       </table>
     </td>
