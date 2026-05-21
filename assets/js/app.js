@@ -57,8 +57,9 @@ function createIconLine(iconUrl, alt, contentHtml) {
 
 function buildSignatureHtml(data) {
   const name = escapeHtml(data.name);
-  const role = escapeHtml(data.role);
   const imageUrl = escapeHtml(data.imageUrl);
+
+  const rolesHtml = data.role.map(r => `<div style="color: #5f8fd8; font-size: 13px;">${escapeHtml(r)}</div>`).join("");
 
   const phoneLines = data.phones.map(phone => {
     const safePhone = escapeHtml(phone);
@@ -121,12 +122,10 @@ function buildSignatureHtml(data) {
                  alt="Littus Group">
           </td>
           <td style="vertical-align: top; border-left: 3px solid #111111; padding-left: 15px;">
-            <div style="font-weight: bold; font-size: 16px; color: #2f63c7; margin-bottom: 3px;">
-              ${name}
-            </div>
-            <div style="color: #5f8fd8; font-size: 13px; margin-bottom: 8px;">
-              ${role}
-            </div>${phoneLines}${emailLines}${websiteLines}${locationLines}
+             <div style="font-weight: bold; font-size: 16px; color: #2f63c7; margin-bottom: 3px;">
+               ${name}
+             </div>
+             ${rolesHtml ? `<div style="margin-bottom: 8px;">${rolesHtml}</div>` : ""}${phoneLines}${emailLines}${websiteLines}${locationLines}
           </td>
         </tr>
       </table>
@@ -140,7 +139,7 @@ function buildSignatureHtml(data) {
 function getFormData() {
   return {
     name: fields.name.value.trim(),
-    role: fields.role.value.trim(),
+    role: splitLines(fields.role.value),
     imageUrl: fields.imageUrl.value.trim(),
     phones: splitLines(fields.phones.value),
     emails: splitLines(fields.emails.value),

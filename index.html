@@ -13,10 +13,10 @@
         <p class="eyebrow">Littus Group</p>
         <h1>Generador de firmas corporativas</h1>
       </div>
-      <p class="hero__description">
-        Completa los datos y copia la firma generada para pegarla en Outlook.
-        Los campos de teléfonos, correos, sitios web y ubicaciones aceptan varios valores: escribe uno por línea.
-      </p>
+          <p class="hero__description">
+            Completa los datos y copia la firma generada para pegarla en Outlook.
+            Los campos de cargos, teléfonos, correos, sitios web y ubicaciones aceptan varios valores: escribe uno por línea.
+          </p>
     </header>
 
     <section class="layout">
@@ -32,10 +32,11 @@
             <input id="name" type="text" value="" placeholder="Ing. John Doe" />
           </div>
 
-          <div>
-            <label for="role">Cargo</label>
-            <input id="role" type="text" value="" placeholder="Coordinador de Procesos" />
-          </div>
+           <div>
+             <label for="role">Cargo</label>
+             <textarea id="role" placeholder="Coordinador de Procesos"></textarea>
+             <span class="hint">Un cargo por línea.</span>
+           </div>
 
           <div>
             <label for="phones">Teléfonos</label>
